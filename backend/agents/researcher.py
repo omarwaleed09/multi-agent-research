@@ -15,10 +15,7 @@ llm = ChatGroq(
 tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 def researcher_Agent(state:AgentState) -> dict:
-    print("researcher searching...")
-
     all_findings=[]
-
     for step in state["plan"]:
         memory_results = search_memory(step, k=2)
         filtered = [doc for doc in memory_results if doc.metadata.get("step") == step]
@@ -52,24 +49,16 @@ Write a concise summary (3-5 sentences):
 
             summary = llm.invoke(summary_prompt)
             finding = summary.content.strip()
-
-            
             save_to_memory(
                 text=finding,
                 metadata={"query": state["query"], "step": step}
             )
-
             all_findings.append(finding)
-            print(f"Done: {finding[:60]}...")
 
         except Exception as e:
-            print(f"Search failed for '{step}': {e}")
             all_findings.append(f"Could not find information for: {step}")
 
-
     full_research = "\n\n".join(all_findings)
-    print(f"\nResearch complete! {len(all_findings)} findings collected.")
-
     return {
         "research": full_research,
         "iterations": state.get("iterations", 0) + 1
