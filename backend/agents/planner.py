@@ -27,7 +27,7 @@ def planner_Agent(state:AgentState) -> dict:
     2. Search for real-world applications
     3. Search for recent developments
     """
-    responce = llm.invoke(prompt)
-    lines = responce.context.strip.split("\n")
+    response = llm.invoke(prompt)
+    lines = response.content.strip().split("\n")
     plan = [line.strip() for line in lines if line.strip() and line[0].isdigit()]
     return {"plan": plan}
