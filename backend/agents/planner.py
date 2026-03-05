@@ -12,8 +12,6 @@ llm = ChatGroq(
 
 
 def planner_Agent(state:AgentState) -> dict:
-    print("planner thinking...")
-
     prompt = f"""
     You are a research planner. The user wants to research this topic and find the best answer:
 
