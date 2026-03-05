@@ -5,3 +5,7 @@ python-dotenv
 tavily-python
 fastapi
 uvicorn
+pinecone 
+langchain-pinecone 
+langchain-huggingface 
+sentence-transformers
