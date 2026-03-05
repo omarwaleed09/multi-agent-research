@@ -361,3 +361,5 @@ vite.config.ts.timestamp-*
 .vite/
 
 .env
+
+*.docx
