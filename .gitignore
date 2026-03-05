@@ -363,3 +363,4 @@ vite.config.ts.timestamp-*
 .env
 
 *.docx
+test.py
