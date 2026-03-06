@@ -51,7 +51,7 @@ Each agent reads from and writes to a **shared state** — a dictionary that act
 - **Web search** — real-time search powered by Tavily API
 - **Agent memory** — research findings are embedded and stored in Pinecone so the system avoids redundant searches and reuses past knowledge across queries
 - **Fast LLM** — powered by Groq's LLaMA 3.3 70B (free & blazing fast)
-- **Clean React UI** — live pipeline visualizer, collapsible detail cards, copy button, query history
+- **Clean React UI** — live pipeline visualizer, collapsible detail cards, copy button, query history (implemented by claude.ai)
 
 ---
 
