@@ -14,7 +14,7 @@ llm = ChatGroq(
 
 tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
-def researcher_Agent(state:AgentState) -> dict:
+def researcher_agent(state:AgentState) -> dict:
     all_findings=[]
     for step in state["plan"]:
         memory_results = search_memory(step, k=2)
