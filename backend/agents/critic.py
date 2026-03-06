@@ -55,6 +55,6 @@ def should_continue(state:AgentState)->str:
 
     first_line = critique.split("\n")[0].upper()
     if "GOOD" in first_line :
-        return "Writer"
+        return "writer"
     else:
         return "researcher"
